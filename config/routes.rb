@@ -1,7 +1,8 @@
 SampleApp::Application.routes.draw do
-  # get "static_pages/home"
   root to: 'static_pages#home'
-  match '/help',    to: 'static_pages#help'
+
+  get "users/new"
+  match '/signup',  to: 'users#new'
 
   # matches ’/about’ and routes it to the about action in 
   # the StaticPages controller. Before, this was more explicit: we used
@@ -11,8 +12,8 @@ SampleApp::Application.routes.draw do
   # automatically creates named routes for use in the controllers and views:
   # about_path => '/about'
   # about_url  => 'http://localhost:3000/about'
-
   match '/about',   to: 'static_pages#about'
+  match '/help',    to: 'static_pages#help'
   match '/contact', to: 'static_pages#contact'
 
 
