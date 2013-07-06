@@ -5,8 +5,8 @@ require 'active_support/core_ext'
 guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
   watch('config/environment.rb')
-  watch(%r{^config/environments/.+\.rb$})
-  watch(%r{^config/initializers/.+\.rb$})
+  watch(%r{^config/environments/.+\.rb$})  # The Guardfile updated for Spork
+  watch(%r{^config/initializers/.+\.rb$})  # The Guardfile updated for Spork
   watch('Gemfile')
   watch('Gemfile.lock')
   watch('spec/spec_helper.rb')
