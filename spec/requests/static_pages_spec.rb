@@ -5,20 +5,18 @@ describe "Static pages" do
   let(:base_title) { "Twitter Analog" }
 
   describe "Home page" do
+    before { visit root_path } 
 
     it "should have the h1 'Twitter like App'" do
-      visit '/static_pages/home'
-      page.should have_selector('h1', :text => 'Twitter like App')
+      page.should have_selector('h1', :text => 'Welcome to The Twitter Analog App')
     end
 
     it "should have the title 'Home'" do
-      visit '/static_pages/home'
       page.should have_selector('title',
                         :text => "#{base_title}")
     end
 
     it "should not have a custom page title" do
-      visit '/static_pages/home'
       page.should_not have_selector('title', :text => '| Home')
     end
   end
@@ -26,12 +24,12 @@ describe "Static pages" do
   describe "Help page" do
 
     it "should have the h1 'Help'" do
-      visit '/static_pages/help'
+      visit help_path
       page.should have_selector('h1', :text => 'Help')
     end
 
     it "should have the title 'Help'" do
-      visit '/static_pages/help'
+      visit help_path
       page.should have_selector('title',
                         :text => "#{base_title} | Help")
     end
@@ -40,12 +38,12 @@ describe "Static pages" do
   describe "About page" do
 
     it "should have the h1 'About'" do
-      visit '/static_pages/about'
+      visit about_path
       page.should have_selector('h1', :text => 'About')
     end
 
     it "should have the title 'About'" do
-      visit '/static_pages/about'
+      visit about_path
       page.should have_selector('title',
                     :text => "#{base_title} | About")
     end
@@ -54,12 +52,12 @@ describe "Static pages" do
   describe "Contact" do
 
     it "should have the h1 'Contact'" do
-      visit '/static_pages/contact'
+      visit contact_path
       page.should have_selector('h1', :text => 'Contact')
     end
 
     it "should have the title 'Contact'" do
-      visit '/static_pages/contact'
+      visit contact_path
       page.should have_selector('title',
                     :text => "#{base_title} | Contact")
     end
