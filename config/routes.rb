@@ -1,7 +1,9 @@
 SampleApp::Application.routes.draw do
+  resources :users
+
   root to: 'static_pages#home'
 
-  get "users/new"
+  # get "users/new"
   match '/signup',  to: 'users#new'
 
   # matches ’/about’ and routes it to the about action in 
