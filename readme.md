@@ -1,5 +1,6 @@
 Twitter analog app
 ==================
+> Working app can be found [here](https://twitter-analog-app.herokuapp.com/) on heroku
 
 Simple prototype of twitter like site with microposts.
 
@@ -9,6 +10,4 @@ After deploy it's possible to create test users with microposts and following re
     
     rake db:populate
 
-Views are coded on HAML and SASS. 
-
-Have tests on Rspec and Cucumber. 
+Views are coded on HAML and SASS. Have tests on Rspec and Cucumber. 
